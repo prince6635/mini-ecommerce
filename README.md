@@ -26,12 +26,24 @@
 
 ## Steps
 * Create a Node.js web App
+
 ```
-$ npm init
+1, $ npm init
     change entry point from (index.js) to server.js
-Create server.js under root
-$ npm install express --save (--save will save dependency to package.json)
-$ nodemon server
+2, create server.js under root
+    $ npm install express --save (--save will save dependency to package.json)
+    $ nodemon server
+3, add the home route
+    var app = express();
+    app.get(..., function(req, res){
+        ...
+    });
+4, add logging info
+    $ npm install morgan --save
+    app.use(morgan('dev'));
+    Console output:
+        GET / 304 2.121 ms - -
+        GET /health 200 0.463 ms - 4
 ```
 
 ## TODO
