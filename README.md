@@ -23,6 +23,7 @@
 * [Git](https://git-scm.com/download/mac) and Github
 * nodemon ($ sudo npm install nodemon -g) - no need to restart after changes
 * [MongoLab](https://mlab.com/) - run MongoDB on cloud
+* Postman - test POST api
 
 ## Steps
 * Create a Node.js web App
@@ -45,5 +46,24 @@
         GET / 304 2.121 ms - -
         GET /health 200 0.463 ms - 4
 ```
+
+* Add Database
+    * mongoose: ORM
+
+    ```
+    1, $ npm install mongoose bcrypt-nodejs --save
+    2, add models/user.js for User schema
+    3, create a MongoDB instance on mLab.com
+        - AWS->Single node->Sandbox->name: miniecommerce
+        - create a database user: root
+        - copy the database url and paste it to server.js (remember to change username and password)
+    4, add it to server.js
+        mongoose.connect(...);
+    5, add user-create route
+        body-parser: parse request body and convert to the format that server needs, also take multi-part bodies (such as image/file upload)
+        $ npm install body-parser --save
+        var User = require('./models/user');
+        app.post('/create-user', ...);
+    ```
 
 ## TODO
