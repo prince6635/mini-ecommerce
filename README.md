@@ -45,8 +45,8 @@
     Console output:
         GET / 304 2.121 ms - -
         GET /health 200 0.463 ms - 4
-5, add [tests](https://developmentnow.com/2015/02/05/make-your-node-js-api-bulletproof-how-to-test-with-mocha-chai-and-supertest/)
-    $ npm install -g mocha --save
+5, add tests (https://developmentnow.com/2015/02/05/make-your-node-js-api-bulletproof-how-to-test-with-mocha-chai-and-supertest/)
+    $ npm install -g mocha --save (by default mocha will run everything in /test off of your main project)
     $ npm install chai --save
     $ npm install supertest --save
 
