@@ -45,6 +45,25 @@
     Console output:
         GET / 304 2.121 ms - -
         GET /health 200 0.463 ms - 4
+5, add [tests](https://developmentnow.com/2015/02/05/make-your-node-js-api-bulletproof-how-to-test-with-mocha-chai-and-supertest/)
+    $ npm install -g mocha --save
+    $ npm install chai --save
+    $ npm install supertest --save
+
+    add test/routing.js
+        var should = require('chai').should(),
+            expect = require('chai').expect,
+            supertest = require('supertest'),
+            api = supertest('http://localhost:3000');
+
+        describe('Health check', function () {
+            it('Should return a 200 response', function (done) {
+                api.get('/health')
+                .set('Accept', 'application/json')
+                .expect(200, done);
+            })
+        })
+    under root folder of the project and run: $ mocha
 ```
 
 * Add Database
