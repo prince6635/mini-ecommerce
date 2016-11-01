@@ -1,3 +1,5 @@
+'use strict';
+
 var mongoose = require('mongoose');
 // bcrypt is for hashing the password
 var bcrypt = require('bcrypt-nodejs');

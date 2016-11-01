@@ -4,7 +4,8 @@
   "description": "This is a mini ecommerce web app.",
   "main": "server.js",
   "scripts": {
-      "test": "make test"
+    "test": "istanbul test _mocha -- -R spec",
+    "lint": "jslint ./*.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "mongoose": "^4.6.0",
     "morgan": "^1.7.0",
     "supertest": "^2.0.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5"
   }
 }

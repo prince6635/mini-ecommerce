@@ -1,8 +1,10 @@
+'use strict';
+
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var app = require('./index')
+var app = require('./index');
 var User = require('./models/user');
 
 // Middleware for logging info
@@ -30,13 +32,17 @@ app.post('/create-user', function (req, res, next) {
 
     user.save(function (err) {
         // Need to return, otherwise it'll always print out the successful result.
-        if (err) return next(err);
+        if (err) {
+            return next(err);
+        }
 
         res.json('Successfully created a new user');
     });
 });
 
 app.listen(3000, function (err) {
-    if (err) throw err;
+    if (err) {
+        throw err;
+    }
     console.log("Server is running on port 3000");
 });

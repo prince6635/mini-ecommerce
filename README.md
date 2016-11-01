@@ -64,6 +64,9 @@
             })
         })
     under root folder of the project and run: $ mocha
+6, add lint support: jslint
+    $ npm install -g jslint --save
+    https://coderwall.com/p/-h1h1w/how-to-use-jslint-in-node-js-projects-properly
 ```
 
 * Add Database
